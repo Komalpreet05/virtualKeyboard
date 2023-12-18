@@ -20,14 +20,26 @@ body {
   border-radius: 20px;
 }
 
-.keyboard {
+/* .keyboard {
   height: 50vh;
   width: 70vw;
-  background: darkgrey;
+  background: #222325;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+} */
+
+.keyboard {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0;
+  background-color: lightblue;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  transition: bottom 0.4s;
 }
 
 .row {
@@ -51,8 +63,13 @@ body {
   padding: 0.5rem;
   border-radius: 3px;
   font-size: 23px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* padding-left: 1.5rem;
+  padding-right: 1.5rem; */
+}
+
+.key {
+  background-color: #646667;
+  color: white;
 }
 
 .key:active {
