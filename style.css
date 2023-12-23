@@ -1,86 +1,111 @@
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100vh;
-}
-
-.textContainer {
-  width: 90vw;
-  height: 18vh;
-  background: whitesmoke;
-  box-shadow: 0 0 20px 2px grey;
-  padding: 1rem;
-  outline: none;
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column-reverse;
-  overflow-y: scroll;
-  border-radius: 20px;
-}
-
-/* .keyboard {
-  height: 50vh;
-  width: 70vw;
-  background: #222325;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-} */
-
 .keyboard {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   padding: 5px 0;
-  background-color: lightblue;
+  background-color: #222325;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   user-select: none;
   transition: bottom 0.4s;
 }
 
-.row {
-  display: flex;
+.keyboard--hidden {
+  bottom: -100%;
+}
+
+.keyboard_keys {
+  text-align: center;
+}
+
+.keyboard_key {
+  height: 45px;
+  width: 6%;
+  max-width: 90px;
+  margin: 3px;
+  border: none;
+  border-radius: 4px;
+  background-color: #646567;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  vertical-align: top;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
 }
 
-.secondLast {
-  width: 60%;
-  margin: 0 auto;
-}
-
-.space {
-  height: 2rem;
-  width: 50%;
-  background-color: grey;
-}
-
-.key {
-  padding: 0.5rem;
-  border-radius: 3px;
-  font-size: 23px;
-  /* padding-left: 1.5rem;
-  padding-right: 1.5rem; */
-}
-
-.key {
-  background-color: #646667;
+.keyboard_key:active {
+  background-color: #404142;
   color: white;
 }
 
-.key:active {
-  background-color: white;
+.keyboard_key.keyboard_key_special:active {
+  background-color: #646567;
+  color: white;
 }
 
-.active {
-  background-color: white;
+.keyboard_key.specialCase:active i.material-icons {
+  color: white;
 }
 
-.key.capslock {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.keyboard_key_wide {
+  width: 12%;
+}
+.keyboard_key_extrawide {
+  width: 36%;
+  max-width: 500px;
+}
+
+.keyboard_key_activeable::after {
+  content: " ";
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #222325;
+  border-radius: 50%;
+}
+
+.keyboard_key_active::after {
+  background-color: #38c938;
+}
+
+.keyboard_key_dark {
+  background-color: rgba(0, 0, 0, 25%);
+}
+
+textarea.use-keyboard {
+  width: 50%;
+  background: white;
+  border-radius: 10px;
+  border: 2px solid;
+  outline: none;
+  overflow: auto;
+  padding: 10px;
+  height: 80px;
+  font-size: 20px;
+}
+
+div#wrappper {
+  display: flex;
+  justify-content: center;
+}
+
+button.keyboard_key_special {
+  background-color: #3f4142;
+}
+
+button.specialCase {
+  background: #d2d4d5;
+}
+
+button.specialCase i.material-icons {
+  color: #222325;
+  font-weight: 600;
 }
